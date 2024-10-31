@@ -9,13 +9,11 @@ import educationRoutes from "./education/routes";
 
 const app = express();
 
-const HOST = 'localhost';
+const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
+app.locals.url = 'http://' + HOST + ':' + PORT + '/';
 
 const publicPath = path.join(__dirname, '..', 'public');
-
-console.log('public path: ', publicPath);
-
 app.use("/public", express.static(publicPath));
 
 app.use(express.json());
@@ -27,5 +25,5 @@ app.use("/", peopleRoutes);
 app.use("/", educationRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on ${HOST}:${PORT}`);
 });

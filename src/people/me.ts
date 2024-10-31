@@ -1,4 +1,3 @@
-import { hostname } from 'os';
 import Person from './person';
 
 const me: Person = {
@@ -24,7 +23,7 @@ I also love crafting, electronics and nature.`,
     links: {
         LinkedIn: 'https://www.linkedin.com/in/miguel-%25C3%25A1ngel-valent%25C3%25ADn-naranjo-94a14366/'
     },
-    image: 'http://localhost:3000/public/profile.jpg'
+    image: 'public/profile.jpg'
 };
 
 export default me;
