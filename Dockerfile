@@ -14,7 +14,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install --production
 
-COPY --from=trasnpiledApi /usr/src/app/dist .
-
+COPY --from=trasnpiledApi /usr/src/app/dist ./dist
+COPY ./public ./public
 EXPOSE 3000
-CMD ["node", "index.js"]
+CMD ["node", "dist/index.js"]
